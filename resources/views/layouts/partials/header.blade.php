@@ -1,1 +1,1 @@
-<h1>Trains</h1>
+<h1 class="text-center">Treni in partenza</h1>

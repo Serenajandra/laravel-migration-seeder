@@ -7,39 +7,30 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Azienda</th>
+                    <th scope="col">Luogo di partenza</th>
+                    <th scope="col">Luogo di arrivo</th>
+                    <th scope="col">Data e ora partenza</th>
+                    <th scope="col">Data e ora di arrivo</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+
+
+                @forelse ($trains as $train)
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{ $train->Azienda }}</td>
+                        <td>{{ $train->Stazione_partenza }}</td>
+                        <td>{{ $train->Stazione_arrivo }}</td>
+                        <td>{{ $train->Orario_partenza }}</td>
+                        <td>{{ $train->Orario_arrivo }}</td>
+                    @empty
+                        <h3>Non ci sono treni in partenza</h3>
+                @endforelse
+
                 </tr>
             </tbody>
         </table>
-        {{--
-        <h2>Trains</h2>
-        <ul>
-            @foreach ($trains as $train) --}}
-        {{-- <li>
-                    {{ $train-> }}, {{ $train->}}</li> --}}
-        {{-- @endforeach --}}
-        {{-- </ul> --}}
     </div>
 @endsection
